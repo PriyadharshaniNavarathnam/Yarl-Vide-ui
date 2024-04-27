@@ -1,5 +1,8 @@
 import './App.css';
 import { Component } from "react";
+import PageWithSidebar from "./components/kitchenstatus";
+
+
 class App extends Component{
   constructor(props){
     super(props);
@@ -8,14 +11,14 @@ class App extends Component{
       
     }
   }
-  API_URL ="http://localhost:5264/";
+  API_URL ="http://localhost:5136/";
   componentDidMount(){
     this.refreshData();
     
   }
   async refreshData(){
     
-    fetch(this.API_URL+"api/YarlVibeControllers/GetData").then(response=>response.json()).then(data=>{
+    fetch(this.API_URL+"api/YarlVibe/GetData").then(response=>response.json()).then(data=>{
       this.setState({datas:data});
     })
   }
@@ -27,7 +30,7 @@ class App extends Component{
     data.append("staffName",staffName);
     data.append("kitchenId",kitchenId);
     
-    fetch(this.API_URL+"api/YarlVibeControllers/AddData",{
+    fetch(this.API_URL+"api/YarlVibe/AddData",{
       method:"POST",
       body:data
     }).then(res=>res.json()).then((result)=>{
@@ -37,8 +40,9 @@ class App extends Component{
   }
   async deleteClick(id){
     
-    fetch(this.API_URL+"api/YarlVibeControllers/DeleteData?id="+id,{
+    fetch(this.API_URL+"api/YarlVibe/DeleteData?id="+id,{
       method:"DELETE",
+      
     }).then(res=>res.json()).then((result)=>{
       alert(result);
       this.refreshData();
@@ -51,6 +55,7 @@ class App extends Component{
         <h2>
           Yarl Vibe
         </h2>
+        <PageWithSidebar />
         <form onSubmit={(event)=>this.addClick(event)}>
         <input
           type="text"
