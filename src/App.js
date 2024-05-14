@@ -1,6 +1,6 @@
 import './App.css';
 import { Component } from "react";
-import PageWithSidebar from "./components/kitchenstatus";
+import OrderDetails from "./components/OrderDetails";
 
 
 class App extends Component{
@@ -49,14 +49,14 @@ class App extends Component{
     })
   }
   render() {
-    const{datas} = this.state;
+    //const{datas} = this.state;
     return (
-      <div className="App">
-        <h2>
-          Yarl Vibe
-        </h2>
-        <PageWithSidebar />
-        <form onSubmit={(event)=>this.addClick(event)}>
+      // <div className="App">
+      //   <h2>
+      //     Yarl Vibe
+      //   </h2>
+        <OrderDetails />
+        /* <form onSubmit={(event)=>this.addClick(event)}>
         <input
           type="text"
           id="newStaffName"
@@ -76,7 +76,7 @@ class App extends Component{
           <b>* {note.StaffName}</b>
           <button onClick={()=>this.deleteClick(note.KitchenStaffID)}>Delete Data</button>
         </p>)}
-      </div>
+      </div> */
     );
   }
 }
