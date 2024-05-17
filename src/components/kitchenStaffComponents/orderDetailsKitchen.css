@@ -1,0 +1,153 @@
+@media (max-width: 421px) {
+  .kitchen-order-details-kitchen{
+    width: 100%;
+    height: 780px;
+  }
+  
+ }
+ 
+ @media (min-width: 421px) {
+   .kitchen-order-details-kitchen{
+    width: 35%;
+    height: 570px;
+     
+     
+    }
+ }
+ .kitchen-order-details-kitchen {
+  display: flex;
+  padding-top: 1%;
+  margin: 2%;
+   overflow-y: auto; /* Add scrollbar if content overflows vertically */
+   border: 1px solid #ccc;
+   justify-content: start;
+   align-items: center;
+   flex-direction: column;
+   box-shadow: 0px 2px 2px rgba(39, 38, 38, 0.289);
+   border-radius: 15px;
+ }
+ .kitchen-order-food-details{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  width: 80%;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 2px 2px rgba(39, 38, 38, 0.289);
+  
+  
+}
+.kitchen-order-food-name{
+  font-weight: bold;
+}
+.kitchen-sub-order-food-details{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.kitchen-collapsible-section {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.kitchen-collapsible-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; /* Adjust padding as needed */
+  background-color: #f9f9f9; /* Optional: Add background color */
+}
+
+.kitchen-collapsible-content {
+  justify-content: center;
+  display: flex;
+  
+}
+.order-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(197, 192, 192);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.order-details-label{
+  margin-right: auto; /* Push label to left corner */
+}
+
+.kitchen-order-close-icon {
+  cursor: pointer;
+  font-size: 1em;
+  color: #000000;
+  margin-left: auto; /* Push icon to right corner */
+}
+.orderId {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: auto;
+  padding-left: 15px;
+}
+.container_date_label {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  color: grey;
+}
+
+.container_date_label .name{
+  margin-right:50px; 
+}
+.container_date_label .date {
+  margin-left:50px; /* Adjust spacing between elements */
+}
+
+
+.kitchen-arrow {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.kitchen-collapsed {
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.label{
+  margin-bottom: 10px;
+
+
+}
+.ready-button {
+  border: none;
+  border-radius: 20px;
+  padding: 0.8% 2%;
+  font-size: 100%;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 30px; 
+  background-color: green;
+  color: white;
+}
+
+
