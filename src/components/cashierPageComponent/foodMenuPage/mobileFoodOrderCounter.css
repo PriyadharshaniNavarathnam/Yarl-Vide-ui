@@ -1,0 +1,41 @@
+/* CounterComponent.css */
+@media (max-width: 421px) {
+    .mobile-counter-container{
+     display: flex;
+    }
+    
+   }
+   
+   @media (min-width: 421px) {
+     .mobile-counter-container{
+       display: none;
+      }
+   }
+.mobile-counter-container {
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
+  }
+  
+  .mobile-counter-button {
+    padding: 2% 8%;
+    margin: 0 3%;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #incrementButton {
+    background-color: white;
+    color: black;
+  }
+  
+  #decrementButton {
+    background-color: white;
+    color: black;
+  }
+  
+  .mobile-counter {
+    font-size: 16px;
+  }
+  
