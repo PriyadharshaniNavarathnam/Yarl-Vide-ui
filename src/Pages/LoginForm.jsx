@@ -12,7 +12,7 @@ import {
 import React from "react";
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import PasswordOutlinedIcon from "@mui/icons-material/PasswordOutlined";
-import yarlVibelogo from "C:/Users/Hp/Documents/GitHub/YarlVibe_Project/Yarl-Vide-ui/src/Images/IMG-20240427-WA0001_prev_ui.png";
+import yarlVibelogo from "../Images/IMG-20240427-WA0001_prev_ui.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { amber } from "@mui/material/colors";
@@ -174,6 +174,7 @@ function LoginForm() {
                 variant="standard"
                 className="mb-none"
                 placeholder="********"
+                type="password"
                 sx={{
                   "& .MuiInput-underline:after": {
                     borderBottomColor: "Orange", // Change underline color to red
