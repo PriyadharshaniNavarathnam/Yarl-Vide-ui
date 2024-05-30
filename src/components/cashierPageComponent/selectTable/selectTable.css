@@ -1,0 +1,46 @@
+@media (max-width: 421px) {
+    .select-table-tableHeader{
+        padding-right:5%;
+        padding-left:5%;
+        justify-content: space-between;
+        flex-direction:  row;
+        display: flex;
+        align-items: center;
+        background-color: white;
+      }
+      .select-table-notification-icon{
+        cursor: pointer;
+       padding-top: 2%;
+       font-size: 150%;
+      }
+      .select-table-title{
+        font-size: 25px;
+      }
+   
+  }
+  
+  @media (min-width: 421px) {
+    .select-table-tableHeader{
+        background-color: white;
+        padding-right:5%;
+        padding-left:5%;
+        justify-content:  space-between;
+        flex-direction:  row;
+        display: flex;
+      }
+      .select-table-notification-icon{
+        cursor: pointer;
+        padding-top: 2%;
+        font-size: 200%;
+        
+       }
+       .select-table-title{
+        font-size: 40px;
+      }
+   
+  }
+  .select-table-close-icon{
+    cursor: pointer;
+   padding-top: 2%;
+   font-size: 150%;
+  }
