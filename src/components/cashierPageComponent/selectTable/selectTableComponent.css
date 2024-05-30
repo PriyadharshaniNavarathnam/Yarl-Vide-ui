@@ -1,0 +1,86 @@
+@media (max-width: 421px) {
+    .select-table-table-container{
+      scale: 0.8;
+    }
+  
+}
+
+@media (min-width: 421px) {
+  
+  
+}
+
+.select-table-table-container {
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    border-radius: 5px; /* Adjust border radius to maintain rounded corners */
+    overflow: hidden; /* Ensure the horizontal line doesn't overflow */
+    position: relative;
+    margin: 1%;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    box-shadow: 0px 2px 2px rgba(39, 38, 38, 0.289);
+  }
+ 
+  .select-table-active-line-green{
+    height: 5%;
+    background-color: green;
+    align-items: end;
+  }
+  .select-table-active-line-red{
+    height: 5%;
+    background-color: red;
+    align-items: end;
+  }
+  .select-table-table-setup{
+
+    height: 70px;
+    width: 100px;
+    align-self: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
+  .select-table-table-twoChairs{
+    height: 50px;
+    width: 100px;
+    align-self: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  }
+  .select-table-threeChairs{
+    flex-direction: row;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    height: 20px;
+  }
+  .select-table-chair-right{
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    width: 3%;
+    height: 40%;
+    align-self: center;
+  }
+  .select-table-chair-top{
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    width: 30%;
+    height: 30%;
+    align-self: center;
+  }
+  .select-table-table{
+    border-radius: 2px;
+    background-color: #e2e2e2;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    height: 40px;
+    width: 70px;
+    align-self: center;
+    align-items: center;
+  }
