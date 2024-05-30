@@ -1,0 +1,30 @@
+/* CounterComponent.css */
+.counter-container {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: space-between;
+  }
+  
+  .counter-button {
+    padding: 2% 8%;
+    margin: 0 3%;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #incrementButton {
+    background-color: white;
+    color: black;
+  }
+  
+  #decrementButton {
+    background-color: white;
+    color: black;
+  }
+  
+  .counter {
+    font-size: 16px;
+  }
+  

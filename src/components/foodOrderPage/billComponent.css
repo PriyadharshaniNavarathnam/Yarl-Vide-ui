@@ -1,0 +1,29 @@
+.main-bill-container{
+    width: 100%;
+    align-items: start;
+    justify-content: start;
+}
+.total-price{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.value-text{
+    font-weight: bold;
+}
+.cash-text-field {
+    width: 100%;
+    border: none; /* Remove default border */
+  border-bottom: 1px solid black; /* Add bottom border */
+  padding: 5px; /* Add padding for spacing */
+  outline: none;/* Remove default outline */
+  background-color: transparent;
+  height: 40%;
+  
+  }
+  .cash{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
