@@ -1,0 +1,28 @@
+/* CurvedBoxButton.css */
+
+.status-button {
+    border: none;
+    border-radius: 20px; /* Adjust the radius as needed */
+    padding: 0.8% 2%;
+    font-size: 85%;
+    cursor: pointer;
+  }
+  
+  .pending {
+    background-color: green;
+    color: white;
+  }
+  
+  .processing {
+    background-color: orange;
+    color: white;
+  }
+  
+  .completed {
+    background-color: blue;
+    color: white;
+  }
+  .delivered {
+    background-color: red;
+    color: white;
+  }
