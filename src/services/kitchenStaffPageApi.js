@@ -1,8 +1,10 @@
-const API_URL ="http://localhost:5136/";
-//Get Order Data
-export const getOrderData = async ({setOrderData}) => {
-    try {
-      const response = await fetch(API_URL + "GetOrdersData");
+const API_URL = "http://localhost:5136/api/";
+
+// Get Order Data
+export const getOrderData = async ({ setOrderData }) => {
+  try {
+    const response = await fetch(`${API_URL}KitchenStaff/GetOrdersData`);
+    if (response.ok) {
       const data = await response.json();
       const sortedData = data.sort((a, b) => {
         const dateA = new Date(a.DateAndTime);
@@ -10,51 +12,52 @@ export const getOrderData = async ({setOrderData}) => {
         return dateB - dateA;
       });
       setOrderData(sortedData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
+    } else {
+      console.error('Failed to fetch orders data:', response.statusText);
     }
-  };
-  //Update order status
-  export const UpdateOrderStatus = async ({orderID, foodStatus}) => {
-    try {
+  } catch (error) {
+    console.error('Error fetching orders data:', error);
+  }
+};
 
-      const response = await fetch(API_URL + "UpdateOrderStatus", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            orderID: orderID,
-            foodStatus: foodStatus
-        })
-      });
+// Update Order Status
+export const updateOrderStatus = async ({ orderID, foodStatus }) => {
+  try {
+    const response = await fetch(`${API_URL}UpdateOrderStatus/UpdateOrderStatus`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        orderID: orderID,
+        foodStatus: foodStatus
+      })
+    });
 
-      if (response.ok) {
-        
-        console.log('TableStatus updated successfully!');
-        // Refresh data after update
-        
-      } else {
-        console.error('Failed to update TableStatus:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error updating TableStatus:', error);
+    if (response.ok) {
+      console.log('Order status updated successfully!');
+      // Optionally, refresh data after update
+    } else {
+      console.error('Failed to update order status:', response.statusText);
     }
-  };
-  // Get orders details
-  export const getOrderDetails = async (orderID) => {
-    try {
-      const response = await fetch(`${API_URL}GetOrderDetails/${orderID}`);
-      if (response.ok) {
-        const data = await response.json();
-        return data;
-      } else {
-        console.error("Failed to fetch order details:", response.statusText);
-        return null;
-      }
-    } catch (error) {
-      console.error("Error fetching order details:", error);
+  } catch (error) {
+    console.error('Error updating order status:', error);
+  }
+};
+
+// Get Order Details
+export const getOrderDetails = async (orderID) => {
+  try {
+    const response = await fetch(`${API_URL}OrderDetails/GetOrderDetails/${orderID}`);
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      console.error("Failed to fetch order details:", response.statusText);
       return null;
     }
-  };
-  
+  } catch (error) {
+    console.error("Error fetching order details:", error);
+    return null;
+  }
+};

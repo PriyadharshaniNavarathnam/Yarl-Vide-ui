@@ -1,8 +1,10 @@
 import {  useState } from "react";
 import "./orderDetailsKitchen.css";
+import { toast ,ToastContainer } from 'react-toastify';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight} from "@fortawesome/free-solid-svg-icons";
+//import './Notification.css'; // Import your CSS file for styling
 
 const OrderDetailsKitchen = ({
   orderId,
@@ -11,7 +13,12 @@ const OrderDetailsKitchen = ({
   ordersDetails,
 }) => {
   
-  
+  const handleButtonClick = () => {
+    toast.success('Notification was sent to waiter.', {
+      position: 'top-right', // Specify the position directly as a string
+      autoClose: 3000,
+    });
+  };
   const OrderDetails = ({ foodName, quantity, custermixeText }) => {
     const [collapsed, setCollapsed] = useState(true);
 
@@ -77,12 +84,15 @@ const OrderDetailsKitchen = ({
       ))}
      </div>
      <label className="label">Send Notification To Waiter</label>
-       <button className="ready-button">Ready</button>
-       <FontAwesomeIcon
+     <button className="ready-button" onClick={handleButtonClick}>
+      Ready{' '}
+      <FontAwesomeIcon
         icon={faArrowRight}
         className="kitchen-order-close-icon"
         onClick={handleCloseIconClick}
       />
+    </button>
+   
     </div>
   );
 };
