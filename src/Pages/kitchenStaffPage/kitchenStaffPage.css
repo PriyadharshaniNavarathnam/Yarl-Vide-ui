@@ -1,52 +1,39 @@
-.kitchen-order-details {
+.kitchen-order-details{
   height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  margin-top: 20px; /* Add margin to the top of the table */
-}
-.detailsContainer{
-  width: 80%;
-  border-radius: 10px;
-}
-.kitchen-titles{
-  margin-top: 30px;
-  margin-bottom: 20px;
-  width: 90%;
-  margin-left: 70px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+    
 }
 .kitchen-page-titleContainer {
-  border-radius: 10px;
-  background-color: #e1e1e1;
-  padding: 10px; /* Increased padding for better spacing */
-  width: 90%;
-  align-self: center;
-  margin-bottom: 20px; /* Added margin for separation */
-}
-
-.kitchen-page-detailsContainer {
-  border-radius: 10px;
-  background-color: #FFFFFF;
-  padding: 10px; /* Increased padding for better spacing */
-  width: 90%;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.kitchen-page-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-}
-
-
-.kitchen-page-label {
-  font-size: 16px; /* Increased font size for better readability */
-  font-weight: bold;
-  margin-right: 10px; /* Increased margin for separation */
-  flex: 1;
-}
+    border-radius: 10;
+    background-color: #e1e1e1;
+    padding: 1%;
+    width: 90%;
+    align-self: center;
+  }
+  .kitchen-page-detailsContainer {
+      border-radius: 10;
+      background-color: #FFFFFF;
+      height:100%;
+      padding: 1%;
+      width: 90%;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      
+    }
+  
+  .kitchen-page-row{
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex
+   
+  }
+  
+  .kitchen-page-label {
+      font-size:15px;
+    font-weight: bold;
+    margin-right: 5;
+  }
