@@ -14,6 +14,10 @@ export const login = async (loginData) => {
     if (!response.ok) {
       throw new Error("Failed to login");
     }
+    if (response.ok) {
+      localStorage.setItem("user", loginData.username);
+      document.location = "/";
+    }
 
     const userData = await response.json();
     return userData;
