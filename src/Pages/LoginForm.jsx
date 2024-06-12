@@ -16,6 +16,7 @@ import yarlVibelogo from "../Images/IMG-20240427-WA0001_prev_ui.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { amber } from "@mui/material/colors";
+import { login } from "../services/loginPageApi";
 
 function LoginForm() {
   const lightTheme = createTheme({
@@ -48,6 +49,10 @@ function LoginForm() {
     setIsDarkMode((prev) => !prev);
     console.log("change");
   };
+
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [remember, setRemember] = React.useState(false);
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -147,6 +152,11 @@ function LoginForm() {
                     borderBottomColor: "Orange",
                   },
                 }}
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                  // console.log(inputId);
+                }}
               />
               <TextField
                 id="input-with-icon-password"
@@ -180,9 +190,24 @@ function LoginForm() {
                     borderBottomColor: "Orange", // Change underline color to red
                   },
                 }}
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  // console.log(inputPassword);
+                }}
               />
               <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
+                control={
+                  <Checkbox
+                    checked={remember}
+                    onChange={(e) => {
+                      setRemember(e.target.checked);
+                      // console.log(remember);
+                    }}
+                    value="remember"
+                    color="primary"
+                  />
+                }
                 label="Remember me"
               />
               <Button
@@ -199,7 +224,7 @@ function LoginForm() {
                     backgroundColor: amber[300],
                   },
                 }}
-                onSubmit={handleLogin}
+                onClick={handleLogin}
               >
                 Login
               </Button>
@@ -212,6 +237,20 @@ function LoginForm() {
 
   async function handleLogin(e) {
     e.preventDefault();
+    // login Data
+    const loginData = {
+      username,
+      password,
+      remember,
+    };
+    console.log(loginData);
+
+    try {
+      const userData = await login(loginData);
+      console.log("Successfully login", userData);
+    } catch (err) {
+      console.log("login failed: ", err);
+    }
   }
 }
 
