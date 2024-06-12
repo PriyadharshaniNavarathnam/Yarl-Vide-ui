@@ -199,6 +199,7 @@ function LoginForm() {
                     backgroundColor: amber[300],
                   },
                 }}
+                onSubmit={handleLogin}
               >
                 Login
               </Button>
@@ -208,6 +209,10 @@ function LoginForm() {
       </Grid>
     </ThemeProvider>
   );
+
+  async function handleLogin(e) {
+    e.preventDefault();
+  }
 }
 
 export default LoginForm;
