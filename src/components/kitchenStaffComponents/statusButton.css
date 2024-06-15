@@ -3,7 +3,7 @@
 .status-button {
     border: none;
     border-radius: 20px; /* Adjust the radius as needed */
-    padding: 0.8% 2%;
+    padding: 1% 2%;
     font-size: 85%;
     cursor: pointer;
   }
@@ -26,3 +26,5 @@
     background-color: red;
     color: white;
   }
+
+  
