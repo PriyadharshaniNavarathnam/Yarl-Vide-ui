@@ -23,25 +23,32 @@ export const getOrderData = async ({ setOrderData }) => {
 // Update Order Status
 export const updateOrderStatus = async ({ orderID, foodStatus }) => {
   try {
-    const response = await fetch(`${API_URL}UpdateOrderStatus/UpdateOrderStatus`, {
+    const response = await fetch(`${API_URL}/UpdateOrderStatus`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        orderID: orderID,
-        foodStatus: foodStatus
-      })
+        orderID,
+        foodStatus,
+      }),
     });
 
-    if (response.ok) {
-      console.log('Order status updated successfully!');
-      // Optionally, refresh data after update
-    } else {
-      console.error('Failed to update order status:', response.statusText);
+    if (!response.ok) {
+      // Extract and log the error message from the response body if available
+      const errorData = await response.json();
+      console.error('Failed to update order status:', errorData.message || response.statusText);
+      return { success: false, message: errorData.message || response.statusText };
     }
+
+    const result = await response.json();
+    console.log('Order status updated successfully:', result);
+    // Optionally, return the result if you need to handle it elsewhere
+    return { success: true, data: result };
+
   } catch (error) {
     console.error('Error updating order status:', error);
+    return { success: false, message: error.message };
   }
 };
 
@@ -61,3 +68,4 @@ export const getOrderDetails = async (orderID) => {
     return null;
   }
 };
+
