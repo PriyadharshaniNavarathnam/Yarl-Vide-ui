@@ -55,6 +55,7 @@
   .inner:before {
     content: "Done";
     padding-left: 5%;
+    
     background-color: #060;
     color: #fff;
   }
@@ -68,7 +69,9 @@
   .switch {
     display: block;
     width: 35%;
+
     margin: 5px;
+    margin-bottom: 15px;
     background: #fff;
     position: absolute;
     top: 0;
