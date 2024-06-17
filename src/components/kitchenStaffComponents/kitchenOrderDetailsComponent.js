@@ -6,9 +6,9 @@ import { getOrderDetails } from "../../services/kitchenStaffPageApi";
 const KitchenOrderDetailsComponent = ({ id, dateAndTime, setIsOrderSelected,setOrderId,setDateAndTime,foodStatus, setOrdersDetails }) => {
   const fetchOrderDetails = async () => {
     try {
-      const data = await getOrderDetails(id); // Call the getOrderDetails function
+      const data = await getOrderDetails(id); 
       if (data) {
-        setOrdersDetails(data); // Set the order details state
+        setOrdersDetails(data);
       }
     } catch (error) {
       console.error("Error fetching order details:", error);
