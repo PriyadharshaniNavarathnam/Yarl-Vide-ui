@@ -4,6 +4,10 @@ import KitchenPageHeader from "../../components/kitchenStaffComponents/kitchenPa
 import "./kitchenStaffPage.css";
 import OrderDetailsKitchen from "../../components/kitchenStaffComponents/orderDetailsKitchen";
 import { getOrderData } from "../../services/kitchenStaffPageApi";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+
+
 const KitchenStaffPage = () => {
   const [ordersDetails, setOrdersDetails] = useState([]);
   const [orderData, setOrderData] = useState([]);
@@ -15,13 +19,15 @@ const KitchenStaffPage = () => {
   
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileScreen(window.innerWidth < 420);
+      setIsMobileScreen(window.innerWidth < 768);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     getOrderData({ setOrderData });
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+
   return (
     <div>
       {(isMobileScreen&&isOrderSelected)?<div style={{justifyContent:"center",width:"100%",height:"100%"}}>
@@ -33,7 +39,7 @@ const KitchenStaffPage = () => {
           />
       </div>:
       <div>
-      <KitchenPageHeader setSearchText={setSearchText} />
+      <KitchenPageHeader showSearchBar={true} setSearchText={setSearchText} />
       <div
         style={{
           display: "flex",
@@ -61,7 +67,7 @@ const KitchenStaffPage = () => {
           <div className="kitchen-order-details">
             <div className="detailsContainer">
               {orderData.map((dataItem) => (
-                <div key={dataItem.OrderID}>
+                <div key={dataItem.OrderID} className="kitchen-order-row">
                   {dataItem.OrderID.toString().includes(searchText) ? (
                     <KitchenOrderDetailsComponent
                       id={dataItem.OrderID}
@@ -79,7 +85,7 @@ const KitchenStaffPage = () => {
                   ) : (
                     <div></div>
                   )}
-                  <div style={{ marginBottom: "0.3%" }} />
+                  <div />
                 </div>
               ))}
             </div>
