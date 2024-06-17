@@ -19,7 +19,7 @@ const KitchenOrderDetailsComponent = ({ id, dateAndTime, setIsOrderSelected,setO
         setOrderId(id);
         setDateAndTime(dateAndTime);
         fetchOrderDetails();
-    }
+    }//jh
   return (
     <div  className='kitchen-details-container' onClick={handleClick}>
     <div  className='kitchen-details-row'>
