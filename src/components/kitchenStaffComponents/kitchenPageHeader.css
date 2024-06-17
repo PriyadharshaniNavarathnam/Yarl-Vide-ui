@@ -1,5 +1,5 @@
 
-/* @media screen and (max-width: 421px){
+@media screen and (min-width: 421px){
   .kitchen-page-header {
     display: flex;
     align-items: center;
@@ -21,8 +21,8 @@
     margin-top: 10px;
     margin-left: 10px;
   }
-} */
-@media screen and (max-width: 1440px)  {
+}
+@media screen and (max-width: 421px)  {
   .kitchen-page-header {
     display: flex;
     align-items: center;
