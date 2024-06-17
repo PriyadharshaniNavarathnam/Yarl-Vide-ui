@@ -1,7 +1,7 @@
 import React from "react";
 import KitchenStaffSearchBar from "./kitchenStaffSearchBar";
 import logo from "../../assets/images/IMG-20240427-WA0001_prev_ui.png"; // Adjust the path to your logo image
-import './kitchenPageHeader.css'
+import "./kitchenPageHeader.css";
 
 const KitchenPageHeader = ({ showSearchBar, setSearchText }) => {
   return (
