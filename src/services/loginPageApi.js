@@ -26,3 +26,21 @@ export const login = async (loginData) => {
     throw error;
   }
 };
+// Logout function
+export const logout = async () => {
+  try {
+    const response = await fetch(API_URL+"Login/logout");
+    if (!response.ok) {
+      throw new Error(`Failed to logout: ${response.statusText}`);
+    }else{
+      console.log("Loged out")
+    }
+    localStorage.removeItem("user");
+    
+    
+  } catch (error) {
+    console.error("Error logging out:", error);
+    alert(`Error logging out: ${error.message}`);
+    throw error;
+  }
+};

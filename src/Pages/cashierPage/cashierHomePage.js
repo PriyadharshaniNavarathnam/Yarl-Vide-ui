@@ -9,6 +9,7 @@ import { getMenuDetails } from "../../services/cashierPageApi";
 import "./cashierHomePage.css";
 import SelectTablePage from "../../components/cashierPageComponent/selectTable/selectTable";
 import MobileFoodOrderPage from "../../components/cashierPageComponent/mobileFoodOrderpPage/mobileFoodOrderPage";
+import { logout } from "../../services/loginPageApi";
 
 const CashierHomePage = () => {
   const [selectedFoods, setSelectedFoods] = useState([]);
@@ -47,7 +48,7 @@ const CashierHomePage = () => {
         <div className="homePage">
           <div className="header-cashier">
             <div className="header-mobile">
-              <h1 className="title-cashier">Yarl Vibe</h1>
+              <h1 className="title-cashier"  onClick={logout}>Yarl Vibe</h1>
               <FontAwesomeIcon
                 icon={faCartShopping}
                 className="cart-icon"

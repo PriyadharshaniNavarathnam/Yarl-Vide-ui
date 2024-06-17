@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import {getTableDetails} from '../../../services/tablePageApi.js'
+import { logout } from '../../../services/loginPageApi.js';
 const WaiterTablePage = () => {
   //Calling Api
   const [dataFloor0, setDataFloor0] = useState([]);
@@ -48,7 +49,7 @@ const updateTableStatusFloor1 = ( TableCode, newStatus) => {
     
       <div>
          <div  className="tableHeader" >
-            <h1  className='title'>Tables</h1>
+            <h1  className='title' onClick={logout}>Tables</h1>
             {/* Pass a function to onClick */}
             <FontAwesomeIcon icon={faBell} className="notification-icon" onClick={handleBellIconClick} />
           </div>
