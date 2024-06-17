@@ -6,19 +6,18 @@ import {
 } from "react-router-dom";
 import LoginForm from "./Pages/LoginForm";
 import ProtectedRoutes from "./components/ProtectedRoutes";
-// import CashierHomePage from "./Pages/cashierPage/cashierHomePage";
-// import kitchenStaffPage from "./Pages/kitchenStaffPage/kitchenStaffPage";
-// import tablePage from "./Pages/waiterPage/tablePage/tablePage";
+import CashierHomePage from "./Pages/cashierPage/cashierHomePage";
+import KitchenStaffPage from "./Pages/kitchenStaffPage/kitchenStaffPage";
+import WaiterTablePage from "./Pages/waiterPage/tablePage/tablePage";
+import { logout } from "./services/loginPageApi";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/">
-      <Route element={<ProtectedRoutes />}>
-        {/* <Route path="/" element={< />} /> */}
-        {/* <Route path="/cashier" element={<CashierHomePage />} /> */}
-        {/* <Route path="/kitchenStaff" element={<kitchenStaffPage />} /> */}
-        {/* <Route path="/waiterTable" element={<tablePage />} /> */}
-      </Route>
+    <Route path="/" element={<ProtectedRoutes />}>
+      <Route path="/cashier" element={<CashierHomePage />} />
+      <Route path="/kitchenStaff" element={<KitchenStaffPage />} />
+      <Route path="/waiterTable" element={<WaiterTablePage />} />
+
       <Route path="/login" element={<LoginForm />} />
       <Route
         path="*"
@@ -39,20 +38,23 @@ const router = createBrowserRouter(
 
 function App() {
   const isLogged = localStorage.getItem("user");
-  console.log(isLogged)
+  //const user = JSON.parse(isLogged);
+  //const username = user.username || localStorage.getItem("username");
+  console.log(isLogged + "hi");
   return (
     <section>
       <div className="top-nav">
         {isLogged ? (
-          <span className="item-holder">
-            {/* <a href="/cashier">Cashier</a> */}
-            {/* <a href="/kitchenStaff">Kitchen Staff</a> */}
-            <a href="/waiterTable">Waiter</a>
-            <span>Log Out</span>
-          </span>
+          isLogged === "kitchenStaff1" ? (
+            <KitchenStaffPage />
+          ) : isLogged === "waiter1" ? (
+            <WaiterTablePage />
+          ) : (
+            <CashierHomePage />
+          )
         ) : (
           <span className="item-holder">
-            <LoginForm/>
+            <LoginForm />
           </span>
         )}
       </div>

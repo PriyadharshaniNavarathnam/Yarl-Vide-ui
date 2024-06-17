@@ -6,11 +6,15 @@
   width: 100%;
   align-self: center;
   text-align:center;
+  display: flex;
+  
 }
 .kitchen-details-row {
   justify-content: space-between;
   flex-direction: row;
   display: flex;
+  width: 100%;
+  
   
 }
 .kitchen-details-label {

@@ -12,7 +12,7 @@ import {
 import React from "react";
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import PasswordOutlinedIcon from "@mui/icons-material/PasswordOutlined";
-import yarlVibelogo from "../Images/IMG-20240427-WA0001_prev_ui.png";
+import yarlVibelogo from "../assets/images/IMG-20240427-WA0001_prev_ui.png";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { amber } from "@mui/material/colors";
@@ -238,7 +238,7 @@ function LoginForm() {
   async function handleLogin(e) {
     e.preventDefault();
     // login Data
-    const loginData = {
+     const loginData = {
       username,
       password,
       remember,

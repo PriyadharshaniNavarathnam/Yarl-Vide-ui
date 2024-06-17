@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { Outlet, Navigate } from "react-router-dom";
+import LoginForm from "../Pages/LoginForm";
+import RoutesConfig from "../config/routesConfig";
+
 
 function ProtectedRoutes() {
   const [isLogged, setIsLogged] = useState(false);
   const [waiting, setWaiting] = useState(true);
 
   useEffect(() => {
+    //logout()
+  
     fetch("api/Login/getUser", {
       method: "GET",
       credentials: "include",
@@ -28,9 +33,9 @@ function ProtectedRoutes() {
       <div>Waiting...</div>
     </div>
   ) : isLogged ? (
-    <Outlet />
+    <RoutesConfig />
   ) : (
-    <Navigate to="/login" />
+    <LoginForm/>
   );
 }
 

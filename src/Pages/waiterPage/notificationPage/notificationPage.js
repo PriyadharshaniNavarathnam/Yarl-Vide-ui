@@ -1,10 +1,10 @@
-import {  StyleSheet, Dimensions} from "react-native";
+
 import React,{useEffect, useState} from "react";
 import OrderDetailsComponent from "../../../components/waiterPageComponents/notificationPageComponents/orderDetails";
 import WaiterSearchBar from "../../../components/waiterPageComponents/notificationPageComponents/searchBar";
 import { getNotificationData } from "../../../services/notificationPageApi";
 import "./notificationPage.css"
-export default function NotificationPage(){
+const NotificationPage=()=>{
   const [searchText, setSearchText] = useState("");
   const [notificationData,setNotificationData] = useState([])
   const fetchNotificationData = async () => {
@@ -58,49 +58,4 @@ export default function NotificationPage(){
   
             );
 }
-const styles = StyleSheet.create({
-    titleContainer: {
-      borderRadius: 10,
-      backgroundColor: "#e1e1e1",
-      /*shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 4,*/
-      elevation: 5,
-      padding: "1%",
-      //marginBottom: "5%",
-      width: "90%",
-      alignSelf: "center",
-    },
-    detailsContainer: {
-        borderRadius: 10,
-        backgroundColor: "#FFFFFF",
-        height:"100%",
-        elevation: 5,
-        padding: "1%",
-        width: "90%",
-        alignSelf: "center",
-      },
-    
-    row: {
-      justifyContent: "space-between",
-      flexDirection: "row",
-      //marginBottom: 10, // Adjust spacing between rows as needed
-    },
-    header:{
-      paddingRight:Dimensions.get('window').width<=421?"0":"5%",
-      paddingLeft:Dimensions.get('window').width<=421?"0":"5%",
-      justifyContent:Dimensions.get('window').width<=421?"center": "space-between",
-      flexDirection: Dimensions.get('window').width<=421?"column": "row",
-    },
-    label: {
-        fontSize:"15px",
-      fontWeight: "bold",
-      marginRight: 5, // Adjust spacing between label and value as needed
-    },
-    
-  });
-  
+export default NotificationPage;
