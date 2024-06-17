@@ -1,30 +1,16 @@
-@media (max-width: 421px) {
-  .kitchen-order-details-kitchen{
-    width: 100%;
-    height: 780px;
-  }
-  
- }
- 
- @media (min-width: 421px) {
-   .kitchen-order-details-kitchen{
-    width: 35%;
-    height: 570px;
-     
-     
-    }
- }
- .kitchen-order-details-kitchen {
+
+
+.kitchen-order-details-kitchen {
   display: flex;
   padding-top: 1%;
   margin: 2%;
-   overflow-y: auto; /* Add scrollbar if content overflows vertically */
-   border: 1px solid #ccc;
-   justify-content: start;
-   align-items: center;
-   flex-direction: column;
-   box-shadow: 0px 2px 2px rgba(39, 38, 38, 0.289);
-   border-radius: 15px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 2px 2px rgba(39, 38, 38, 0.289);
+  border-radius: 15px;
  }
  .kitchen-order-food-details{
   padding-left: 5%;
@@ -63,13 +49,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.order-details-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px; /* Adjust padding as needed */
-  background-color: #f9f9f9; /* Optional: Add background color */
-}
+
 
 .kitchen-collapsible-content {
   justify-content: center;
@@ -79,13 +59,11 @@
 .order-details-container {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically */
-  font-size: 1.5rem;
+  align-items: center; 
   font-weight: bold;
   color: black;
-  background-color: rgb(197, 192, 192);
-  padding: 10px;
-  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 5px;
   border-radius: 8px;
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
@@ -96,12 +74,7 @@
   margin-right: auto; /* Push label to left corner */
 }
 
-.kitchen-order-close-icon {
-  cursor: pointer;
-  font-size: 1em;
-  color: #000000;
-  margin-left: auto; /* Push icon to right corner */
-}
+
 .orderId {
   font-weight: bold;
   font-size: 1.5rem;
@@ -112,14 +85,10 @@
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
-  color: grey;
+  color: rgb(207, 204, 204);
 }
-
-.container_date_label .name{
-  margin-right:50px; 
-}
-.container_date_label .date {
-  margin-left:50px; /* Adjust spacing between elements */
+.details{
+  background-color: rgb(164, 164, 164);
 }
 
 
@@ -141,7 +110,7 @@
 .ready-button {
   border: none;
   border-radius: 20px;
-  padding: 0.8% 2%;
+  padding: 3% 6%;
   font-size: 100%;
   cursor: pointer;
   align-items: center;
@@ -150,4 +119,74 @@
   color: white;
 }
 
+.name{
+  color: #404040;
+  margin-right: 90px;
+}
 
+.date{
+  color: #404040;
+
+}
+
+.notification{
+  text-align: center;
+}
+.kitchen-page-title{
+  font-size: 25px;
+}
+.kitchen-page-logo{
+  margin-right: 30px;
+}
+@media screen and (max-width: 1440px) { 
+  .kitchen-page-logo{
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+  }
+  .kitchen-order-details-kitchen{
+    width: 40%;
+    height: 550px;
+    margin-top: 0px;
+    }
+
+    .order-details-container {
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0;
+
+    }
+    .kitchen-order-close-icon {
+      cursor: pointer;
+      font-size: 1em;
+      color: #000000;
+      margin-left: auto; /* Push icon to right corner */
+    }
+
+}
+
+@media screen and (max-width: 421px) { 
+  .kitchen-page-logo{
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+  }
+ .kitchen-order-details-kitchen{
+  width: 100%;
+  height: 550px;
+  }
+  .order-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Adjust padding as needed */
+    background-color: #fdf7f7; /* Optional: Add background color */
+  }
+  .kitchen-order-close-icon {
+    cursor: pointer;
+    font-size: 1em;
+    color: #000000;
+    margin-left: auto; /* Push icon to right corner */
+  }
+
+}
