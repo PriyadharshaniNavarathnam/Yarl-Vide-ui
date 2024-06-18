@@ -1,9 +1,7 @@
 
-
 .kitchen-order-details-kitchen {
   display: flex;
   padding-top: 1%;
-  margin: 2%;
   overflow-y: auto;
   border: 1px solid #ccc;
   justify-content: start;
@@ -74,12 +72,10 @@
   margin-right: auto; /* Push label to left corner */
 }
 
-
 .orderId {
   font-weight: bold;
   font-size: 1.5rem;
-  margin-right: auto;
-  padding-left: 15px;
+  margin-left: 0px;
 }
 .container_date_label {
   margin-top: 15px;
@@ -103,6 +99,7 @@
 }
 
 .label{
+  margin-top: 20px;
   margin-bottom: 10px;
 
 
@@ -138,42 +135,44 @@
 .kitchen-page-logo{
   margin-right: 30px;
 }
-@media screen and (max-width: 1440px) { 
+
+
+
+@media screen and (max-width: 421px) { 
   .kitchen-page-logo{
     width: 80px;
     height: 80px;
     margin-left: 0;
   }
   .kitchen-order-details-kitchen{
-    width: 40%;
-    height: 550px;
-    margin-top: 0px;
-    }
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 
-    .order-details-container {
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0;
-
-    }
-    .kitchen-order-close-icon {
-      cursor: pointer;
-      font-size: 1em;
-      color: #000000;
-      margin-left: auto; /* Push icon to right corner */
-    }
+  .order-details-container {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .kitchen-order-close-icon {
+    cursor: pointer;
+    font-size: 1em;
+    color: #000000;
+    margin-left: auto; /* Push icon to right corner */
+  }
 
 }
 
-@media screen and (max-width: 421px) { 
+@media screen and (min-width: 422px) { 
   .kitchen-page-logo{
     width: 50px;
     height: 50px;
     margin-left: 0;
   }
  .kitchen-order-details-kitchen{
-  width: 100%;
-  height: 550px;
+    width: 40%;
+    margin-top: 0;
   }
   .order-details-container {
     display: flex;
