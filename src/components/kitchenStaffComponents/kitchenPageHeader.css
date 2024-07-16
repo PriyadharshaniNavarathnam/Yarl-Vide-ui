@@ -1,10 +1,10 @@
-
-@media screen and (min-width: 421px){
+@media screen and (min-width: 422px){
   .kitchen-page-header {
     display: flex;
     align-items: center;
     background-color: #ffffff;
     margin-bottom: 30px;
+    justify-items: center;
   }
   .kitchen-page-title {
     font-size: 20px;
@@ -19,7 +19,7 @@
     width: 50px;
     height: 50px;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 80px;
   }
 }
 @media screen and (max-width: 421px)  {
@@ -30,6 +30,7 @@
     margin-bottom: 30px;
     margin-top: 20px;
     flex-wrap: wrap;
+    justify-items: center;
   }
   .kitchen-page-title {
     font-size: 40px;

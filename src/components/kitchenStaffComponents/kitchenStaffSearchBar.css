@@ -1,6 +1,5 @@
 
 .kitchen-search-input {
-  width: 50%;
   border: none;
   outline: none;
   padding: 10px 10px 10px 40px; /* Add left padding to make room for the icon */
@@ -10,22 +9,23 @@
 .kitchen-search-input::placeholder {
   color: #999;
   font-style: italic;
+  max-width: 200px;
 }
-@media screen and (max-width: 1440px)  {
+@media screen and (min-width: 422px)  {
   .kitchen-search-container {
     position: relative;
-    display: flex;
-    align-items: center;
     border: 0.5px solid #d97c12;
     border-radius: 5px;
-    max-width: 200px;
-    margin-left:500px;
+    margin:auto;
   }
 }
 
 
 @media screen and (max-width:421px) {
   .kitchen-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
     border: 1.5px solid #d7821a;
     border-radius:5px;
     margin-top :10px; 
