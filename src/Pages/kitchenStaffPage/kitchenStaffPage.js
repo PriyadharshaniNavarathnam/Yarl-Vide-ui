@@ -5,7 +5,7 @@ import "./kitchenStaffPage.css";
 import OrderDetailsKitchen from "../../components/kitchenStaffComponents/orderDetailsKitchen";
 import { getOrderData } from "../../services/kitchenStaffPageApi";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import Navbar from "../../components/Navbar/Navbar";
 
 
 const KitchenStaffPage = () => {
@@ -30,6 +30,7 @@ const KitchenStaffPage = () => {
 
   return (
     <div>
+      <Navbar/>
       {(isMobileScreen&&isOrderSelected)?<div style={{justifyContent:"center",width:"100%",height:"100%"}}>
         <OrderDetailsKitchen
             orderId={orderId}
