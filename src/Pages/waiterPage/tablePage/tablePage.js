@@ -9,6 +9,7 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import {getTableDetails} from '../../../services/tablePageApi.js'
 import { logout } from '../../../services/loginPageApi.js';
+import Navbar from '../../../components/Navbar/Navbar.jsx';
 const WaiterTablePage = () => {
   //Calling Api
   const [dataFloor0, setDataFloor0] = useState([]);
@@ -48,6 +49,7 @@ const updateTableStatusFloor1 = ( TableCode, newStatus) => {
   return (
     
       <div>
+        <Navbar/>
          <div  className="tableHeader" >
             <h1  className='title' onClick={logout}>Tables</h1>
             {/* Pass a function to onClick */}

@@ -10,6 +10,7 @@ import "./cashierHomePage.css";
 import SelectTablePage from "../../components/cashierPageComponent/selectTable/selectTable";
 import MobileFoodOrderPage from "../../components/cashierPageComponent/mobileFoodOrderpPage/mobileFoodOrderPage";
 import { logout } from "../../services/loginPageApi";
+import Navbar from "../../components/Navbar/Navbar";
 
 const CashierHomePage = () => {
   const [selectedFoods, setSelectedFoods] = useState([]);
@@ -31,6 +32,7 @@ const CashierHomePage = () => {
   const [searchText, setSearchText] = useState("");
   return (
     <div>
+      <Navbar/>
       {isShowTable ? (
         <SelectTablePage
           setSelectedTable={setSelectedTable}
