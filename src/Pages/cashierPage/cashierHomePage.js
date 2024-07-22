@@ -32,7 +32,7 @@ const CashierHomePage = () => {
   const [searchText, setSearchText] = useState("");
   return (
     <div>
-      <Navbar/>
+      <Navbar setSearchText={setSearchText}/>
       {isShowTable ? (
         <SelectTablePage
           setSelectedTable={setSelectedTable}
@@ -50,7 +50,7 @@ const CashierHomePage = () => {
         <div className="homePage">
           <div className="header-cashier">
             <div className="header-mobile">
-              <h1 className="title-cashier"  onClick={logout}>Yarl Vibe</h1>
+              <h1 className="title-cashier">Yarl Vibe</h1>
               <FontAwesomeIcon
                 icon={faCartShopping}
                 className="cart-icon"

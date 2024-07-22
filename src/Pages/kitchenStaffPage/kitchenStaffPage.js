@@ -30,7 +30,7 @@ const KitchenStaffPage = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar setSearchText={setSearchText}/>
       {(isMobileScreen&&isOrderSelected)?<div style={{justifyContent:"center",width:"100%",height:"100%"}}>
         <OrderDetailsKitchen
             orderId={orderId}
