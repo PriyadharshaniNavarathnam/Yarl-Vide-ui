@@ -1,12 +1,15 @@
 /* CurvedBoxButton.css */
 
 .status-button {
-    border: none;
-    border-radius: 20px; /* Adjust the radius as needed */
-    padding: 1% 2%;
-    font-size: 85%;
-    cursor: pointer;
-  }
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  transition: background-color 0.3s;
+}
   
   .pending {
     background-color: green;

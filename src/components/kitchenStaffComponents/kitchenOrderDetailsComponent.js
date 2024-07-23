@@ -19,12 +19,12 @@ const KitchenOrderDetailsComponent = ({ id, dateAndTime, setIsOrderSelected,setO
         setOrderId(id);
         setDateAndTime(dateAndTime);
         fetchOrderDetails();
-    }//jh
+    }
   return (
-    <div  className='kitchen-details-container' onClick={handleClick}>
+    <div  className='kitchen-details-container' >
     <div  className='kitchen-details-row'>
-      <div  className='kitchen-details-label'>{id}</div>
-      <div className='kitchen-details-label'>{dateAndTime}</div>
+      <div  className='kitchen-details-label' onClick={handleClick}>{id}</div>
+      <div className='kitchen-details-label' onClick={handleClick}>{dateAndTime}</div>
      <StatusButton foodStatus={foodStatus} orderID={id}/>
     </div>
 </div>
