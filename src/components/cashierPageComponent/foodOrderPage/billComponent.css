@@ -16,7 +16,7 @@
     width: 100%;
     border: none; /* Remove default border */
   border-bottom: 1px solid black; /* Add bottom border */
-  padding: 5px; /* Add padding for spacing */
+  padding: 10px; /* Add padding for spacing */
   outline: none;/* Remove default outline */
   background-color: transparent;
   height: 40%;

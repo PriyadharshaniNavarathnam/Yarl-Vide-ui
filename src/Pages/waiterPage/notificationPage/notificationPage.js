@@ -3,6 +3,7 @@ import React,{useEffect, useState} from "react";
 import OrderDetailsComponent from "../../../components/waiterPageComponents/notificationPageComponents/orderDetails";
 import WaiterSearchBar from "../../../components/waiterPageComponents/notificationPageComponents/searchBar";
 import { getNotificationData } from "../../../services/notificationPageApi";
+import Navbar from '../../../components/Navbar/Navbar.jsx';
 import "./notificationPage.css"
 const NotificationPage=()=>{
   const [searchText, setSearchText] = useState("");
@@ -21,6 +22,7 @@ const NotificationPage=()=>{
 
     return (
         <div>
+          <Navbar setSearchText={setSearchText}/>
           <div  className="header" >
             <h1 className="title">Notifications</h1>
             <WaiterSearchBar setSearchText={setSearchText}/>

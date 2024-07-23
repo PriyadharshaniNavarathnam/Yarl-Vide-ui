@@ -50,6 +50,7 @@
   .inner:before {
     content: "Done";
     padding-left: 2%;
+    
     background-color: #060;
     color: #fff;
   }
