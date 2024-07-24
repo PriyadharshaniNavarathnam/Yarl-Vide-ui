@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import KitchenOrderDetailsComponent from "../../components/kitchenStaffComponents/kitchenOrderDetailsComponent";
-import KitchenPageHeader from "../../components/kitchenStaffComponents/kitchenPageHeader";
 import "./kitchenStaffPage.css";
 import OrderDetailsKitchen from "../../components/kitchenStaffComponents/orderDetailsKitchen";
 import { getOrderData } from "../../services/kitchenStaffPageApi";
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Navbar from "../../components/Navbar/Navbar";
 
 
@@ -40,7 +38,6 @@ const KitchenStaffPage = () => {
           />
       </div>:
       <div>
-      <KitchenPageHeader showSearchBar={true} setSearchText={setSearchText} />
       <div
         style={{
           display: "flex",
@@ -55,6 +52,7 @@ const KitchenStaffPage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              marginBottom:"20px",
             }}
           >
             <div className="kitchen-page-titleContainer">

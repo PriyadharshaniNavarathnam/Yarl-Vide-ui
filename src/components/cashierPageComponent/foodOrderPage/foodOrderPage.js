@@ -3,6 +3,8 @@ import "./foodOrderPage.css";
 import FoodOrderDetails from "./foodOrderDetails";
 import BillComponent from "./billComponent";
 import { addOrder } from "../../../services/cashierPageApi";
+import { toast, ToastContainer } from 'react-toastify';
+
 const FoodOrder = ({
   foods,
   setSelectedFoods,
@@ -39,17 +41,28 @@ const FoodOrder = ({
         dateAndTime: dateAndTime,
         orderDetails: foods,
       };
-      addOrder({ orderData });
-      alert("Order added succesfuly!")
+      try {
+        addOrder({ orderData }); // Assuming addOrder is an async function
+        toast.success("Order added successfully!");
+        
+        setTimeout(() => {
+          window.location.reload();
+        }, 5000);
+      } catch (error) {
+        toast.error("Failed to add order. Please try again.");
+        console.error(error); // Log error for debugging
+      }
     } else {
       if (isNaN(cash) || cash == 0) {
-        alert("Enter valid amount of cash!");
+       toast.error("Enter valid amount of cash!");
       } else if (selectedTable === "") {
-        alert("Select a table!")
+       toast.error("Select a table!")
       }else{
-        alert("Select any foods!")
+       toast.error("Select any foods!")
       }
     }
+
+    
   };
   useEffect(() => {
     Object.keys(foods).map((foodKey) => (total = total + foods[foodKey].price));
@@ -69,6 +82,7 @@ const FoodOrder = ({
   };
   return (
     <div className="order-main-container">
+      <ToastContainer/>
       <TabButton
         color={"rgb(193, 64, 0)"}
         text={selectedTable === "" ? "Select Table" : selectedTable}

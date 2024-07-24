@@ -3,6 +3,7 @@ import "./foodComponent.css"; // Import CSS file for styling
 import MobileFoodOrderCounter from "./mobileFoodOrderCounter";
 import imageUrl from "../../../assets/images/food1.jpg";
 
+
 const FoodComponent = ({ menuItem, setSelectedFoods }) => {
   const [isClickable, setIsClickable] = useState(false);
   const [newFoodMobile, setNewFoodMobile] = useState(null);
