@@ -1,31 +1,48 @@
-import { useState, useEffect } from "react";
-import "./orderDetailsKitchen.css";
-import KitchenPageHeader from "../../components/kitchenStaffComponents/kitchenPageHeader";
+import { useState, useEffect } from 'react';
+import './orderDetailsKitchen.css';
 import { toast, ToastContainer } from 'react-toastify';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/images/IMG-20240427-WA0001_prev_ui.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/images/IMG-20240427-WA0001_prev_ui.png';
 import ConfirmationDialog from '../DialogBox';
+import { UpdateOrderStatus } from '../../services/kitchenStaffPageApi';
+import { getOrderStatus } from '../../services/kitchenStaffPageApi';
 
 const OrderDetailsKitchen = ({
   orderId,
   dateAndTime,
   setIsOrderSelected,
-  ordersDetails,
-  foodStatus,
+  ordersDetails
 }) => {
-  const [status, setStatus] = useState(foodStatus);
+  const [status, setStatus] = useState('');
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogMessage, setDialogMessage] = useState('');
   const [dialogAction, setDialogAction] = useState(() => {});
 
+  useEffect(() => {
+    const fetchOrderStatus = async () => {
+      try {
+        const data = await getOrderStatus(orderId);
+        if (data && data.length > 0) {
+          setStatus(data[0].FoodStatus);
+        }
+      } catch (error) {
+        console.error('Error fetching order status:', error);
+      }
+    };
+
+    fetchOrderStatus();
+  }, [orderId]);
+
   const handleButtonClick = () => {
     setDialogMessage('Are you sure you want to send Notification to waiter?');
     setDialogAction(() => () => {
-      toast.success("Notification sent to waiter.");
+      toast.success('Notification sent to waiter.');
+      UpdateOrderStatus({ orderID: orderId, foodStatus: 'completed' });
+      window.location.reload();
     });
     setDialogOpen(true);
-  }
+  };
 
   const handleConfirm = () => {
     dialogAction();
@@ -47,14 +64,12 @@ const OrderDetailsKitchen = ({
       <div className="kitchen-order-food-details">
         <div className="kitchen-sub-order-food-details">
           <div className="kitchen-order-food-name">{foodName}</div>
-          <div style={{ display: "flex" }}>
-            <div style={{ paddingRight: "30%", fontWeight: "bold" }}>
+          <div style={{ display: 'flex' }}>
+            <div style={{ paddingRight: '30%', fontWeight: 'bold' }}>
               {quantity}
             </div>
             <span
-              className={`kitchen-arrow ${
-                collapsed ? "kitchen-collapsed" : ""
-              }`}
+              className={`kitchen-arrow ${collapsed ? 'kitchen-collapsed' : ''}`}
               onClick={toggleCollapse}
             >
               &#x25BC;
@@ -63,7 +78,7 @@ const OrderDetailsKitchen = ({
         </div>
         {!collapsed && (
           <div className="kitchen-collapsible-content">
-            <p>{custermixeText === "" ? "No Customization" : custermixeText}</p>
+            <p>{custermixeText === '' ? 'No Customization' : custermixeText}</p>
           </div>
         )}
       </div>
@@ -80,7 +95,7 @@ const OrderDetailsKitchen = ({
         icon={faCircleXmark}
         className="kitchen-order-close-icon"
         onClick={handleCloseIconClick}
-        style={{ marginRight: '10px' }} 
+        style={{ marginRight: '10px' }}
       />
       <div className="kitchen-page-header">
         <img src={logo} alt="Yarl VBB Logo" className="kitchen-page-logo" />
@@ -88,15 +103,15 @@ const OrderDetailsKitchen = ({
           <h1 className="kitchen-page-title">Order Details</h1>
         </div>
       </div>
-     
+
       <div className="orderId">Order Id: {orderId}</div>
       <div className="container_date_label">
         <div className="name">Yarl Vibe</div>
         <div className="date">{dateAndTime}</div>
       </div>
-      <div  style={{ width: "100%", justifyContent: "center", overflowY: "auto", height: "80%" }}>
+      <div style={{ width: '100%', justifyContent: 'center', overflowY: 'auto', height: '80%' }}>
         {Object.keys(ordersDetails).map((foodKey) => (
-          <div key={foodKey} style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+          <div key={foodKey} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
             <OrderDetails
               foodName={ordersDetails[foodKey].FoodName}
               quantity={ordersDetails[foodKey].Quantity}
@@ -105,18 +120,21 @@ const OrderDetailsKitchen = ({
           </div>
         ))}
       </div>
-      <div className="notification">
-        <label className="label">Send Notification To Waiter</label>
-        <button className="ready-button" onClick={handleButtonClick}>
-          Ready{' '}
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            className="kitchen-order-close-icon"
-          />
-        </button>
-      </div>
-      
-      <ToastContainer/>
+
+      {status === 'processing' && (
+        <div className="notification">
+          <label className="label">Send Notification To Waiter</label>
+          <button className="ready-button" onClick={handleButtonClick}>
+            Ready{' '}
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="kitchen-order-close-icon"
+            />
+          </button>
+        </div>
+      )}
+
+      <ToastContainer />
       <ConfirmationDialog
         open={dialogOpen}
         onClose={handleClose}

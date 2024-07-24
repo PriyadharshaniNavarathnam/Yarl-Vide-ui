@@ -18,25 +18,17 @@ const StatusButton = ({ foodStatus, orderID }) => {
       setDialogAction(() => () => {
         setStatus('processing');
         UpdateOrderStatus({ orderID: orderID, foodStatus: 'processing' });
+        
       });
       setDialogOpen(true);
-    } else if (status === 'processing') {
-      setDialogMessage('Are you sure you want to mark the order as completed?');
-      setDialogAction(() => () => {
-        setStatus('completed');
-        UpdateOrderStatus({ orderID: orderID, foodStatus: 'completed' });
-      });
-      setDialogOpen(true);
-    } else if (status === 'completed') {
-      setDialogMessage('Are you sure you want to send Notification to waiter?');
-      setDialogAction(() => () => {
-      setStatus('completed');
-      UpdateOrderStatus({ orderID: orderID, foodStatus: 'completed' });
-      });
-      setDialogOpen(true);
-    } else {
+    }  else if (status === 'completed' ) {
+      toast.error("Order has already been Completed.");
+    } else if (status === 'delivered' ) {
       toast.error("Order has already been delivered.");
     } 
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   };
 
   const handleConfirm = () => {

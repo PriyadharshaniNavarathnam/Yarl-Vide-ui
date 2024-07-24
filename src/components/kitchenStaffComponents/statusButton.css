@@ -22,11 +22,11 @@
   }
   
   .completed {
-    background-color: blue;
+    background-color: red;
     color: white;
   }
   .delivered {
-    background-color: red;
+    background-color: blue;
     color: white;
   }
 

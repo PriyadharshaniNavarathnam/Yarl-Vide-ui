@@ -5,7 +5,6 @@
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
-  padding-top: 20px; /* Adjust the padding value as needed */
 }
 
 @media screen and (min-width: 421px) {
@@ -16,6 +15,7 @@
 }
 
 .kitchen-page-titleContainer {
+  margin-top: 20px;
   border-radius: 10px;
   background-color: #bbbaba;
   padding: 1%;

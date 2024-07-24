@@ -12,6 +12,7 @@
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
     "msal": "^1.4.18",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
