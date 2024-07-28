@@ -43,7 +43,7 @@ const OrderDetailsKitchen = ({
       UpdateOrderStatus({ orderID: orderId, foodStatus: 'completed' });
       setTimeout(() => {
         window.location.reload();
-      }, 3000);
+      }, 5000);
     });
     setDialogOpen(true);
     setTimeout(() =>{
