@@ -22,6 +22,7 @@ const KitchenOrderDetailsComponent = ({
       console.error("Error fetching order details:", error);
     }
   };
+
   const handleClick = () => {
     setIsOrderSelected(true);
     setOrderId(id);
@@ -40,6 +41,10 @@ const KitchenOrderDetailsComponent = ({
         </div>
         <StatusButton foodStatus={foodStatus} orderID={id} />
       </div>
+
+    
+
+
     </div>
   );
 };

@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import OrderDetailsComponent from "../../../components/waiterPageComponents/notificationPageComponents/orderDetails";
 import WaiterSearchBar from "../../../components/waiterPageComponents/notificationPageComponents/searchBar";
 import { getNotificationData } from "../../../services/notificationPageApi";
+
 import "./notificationPage.css";
 import Navbar from "../../../components/Navbar/Navbar";
 const NotificationPage = () => {
+
+
+
+
+
   const [searchText, setSearchText] = useState("");
   const [notificationData, setNotificationData] = useState([]);
   const fetchNotificationData = async () => {
@@ -19,9 +25,10 @@ const NotificationPage = () => {
     fetchNotificationData();
   }, []);
 
+
   return (
     <div className="dark:bg-secondary dark:text-white">
-      <Navbar/>
+      <Navbar setSearchText={setSearchText}/>
       <div className="header">
         <h1 className="title">Notifications</h1>
         <WaiterSearchBar setSearchText={setSearchText} />
@@ -38,6 +45,13 @@ const NotificationPage = () => {
             <div className="label">OrderID</div>
             <div className="label">Table Number</div>
             <div className="label">Delivered</div>
+
+
+
+
+
+
+
           </div>
         </div>
       </div>

@@ -1,19 +1,35 @@
+
 const API_URL ="http://localhost:5136/";
 //Get Order Data
-export const getOrderData = async ({setOrderData}) => {
-    try {
-      const response = await fetch(API_URL + "GetOrdersData");
+export const getOrderData = async ({ setOrderData, setFoodStatus }) => {
+  try {
+    const response = await fetch(API_URL + "GetOrdersData");
+    const data = await response.json();
+    
+    // Extract the FoodStatus from the first order; adjust if needed
+    const status = data.length > 0 ? data[0].FoodStatus : '';
+    setOrderData(data);
+    setFoodStatus(status);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+export const getOrderStatus = async (orderId) => {
+  try {
+    const response = await fetch(`${API_URL}GetOrderStatus/${orderId}`);
+    if (response.ok) {
       const data = await response.json();
-      const sortedData = data.sort((a, b) => {
-        const dateA = new Date(a.DateAndTime);
-        const dateB = new Date(b.DateAndTime);
-        return dateB - dateA;
-      });
-      setOrderData(sortedData);
-    } catch (error) {
-      console.error('Error fetching data:', error);
+      return data;
+    } else {
+      console.error("Failed to fetch details:", response.statusText);
+      return null;
     }
-  };
+  } catch (error) {
+    console.error("Error fetching details:", error);
+    return null;
+  }
+};
   //Update order status
   export const UpdateOrderStatus = async ({orderID, foodStatus}) => {
     try {
