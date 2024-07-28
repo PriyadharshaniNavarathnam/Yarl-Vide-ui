@@ -26,9 +26,7 @@ const StatusButton = ({ foodStatus, orderID }) => {
     } else if (status === 'delivered' ) {
       toast.error("Order has already been delivered.");
     } 
-    setTimeout(() => {
-      window.location.reload();
-    }, 3000);
+    
   };
 
   const handleConfirm = () => {
