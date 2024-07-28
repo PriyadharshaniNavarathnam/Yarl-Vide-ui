@@ -1,5 +1,6 @@
 
 .kitchen-order-details-kitchen {
+  margin-top: 200px;
   display: flex;
   padding-top: 1%;
   overflow-y: auto;
@@ -27,6 +28,11 @@
 .kitchen-order-food-name{
   font-weight: bold;
 }
+
+.kitchen-page-heading{
+  font-weight: bolder;
+  font-size: 2rem;
+}
 .kitchen-sub-order-food-details{
   width: 100%;
   display: flex;
@@ -34,13 +40,8 @@
   align-items: center;
   background-color: white;
 }
-.kitchen-collapsible-section {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-}
 
-.kitchen-collapsible-header {
-  background-color: #f0f0f0;
+.kitchen-page-header{
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -139,10 +140,19 @@
 
 
 @media screen and (max-width: 421px) { 
+  .kitchen-page-header{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
   .kitchen-page-logo{
-    width: 80px;
-    height: 80px;
-    margin-left: 0;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .kitchen-order-details-kitchen{
     margin-top: 5%;
@@ -154,6 +164,7 @@
   .order-details-container {
     justify-content: space-between;
     align-items: center;
+    display: flex;
   }
   .kitchen-order-close-icon {
     cursor: pointer;
@@ -165,6 +176,7 @@
 }
 
 @media screen and (min-width: 422px) { 
+ 
   .kitchen-page-logo{
     width: 50px;
     height: 50px;

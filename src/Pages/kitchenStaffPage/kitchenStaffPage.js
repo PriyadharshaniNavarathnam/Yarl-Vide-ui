@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import KitchenOrderDetailsComponent from "../../components/kitchenStaffComponents/kitchenOrderDetailsComponent";
-import KitchenPageHeader from "../../components/kitchenStaffComponents/kitchenPageHeader";
 import "./kitchenStaffPage.css";
 import OrderDetailsKitchen from "../../components/kitchenStaffComponents/orderDetailsKitchen";
 import { getOrderData } from "../../services/kitchenStaffPageApi";
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Navbar from "../../components/Navbar/Navbar";
 
 
@@ -29,8 +27,13 @@ const KitchenStaffPage = () => {
 
 
   return (
+
     <div className="dark:bg-secondary dark:text-white">
-      <Navbar/>
+      <Navbar setSearchText={setSearchText}/>
+
+
+
+
       {(isMobileScreen&&isOrderSelected)?<div style={{justifyContent:"center",width:"100%",height:"100%"}}>
         <OrderDetailsKitchen
             orderId={orderId}
@@ -40,7 +43,6 @@ const KitchenStaffPage = () => {
           />
       </div>:
       <div>
-      <KitchenPageHeader showSearchBar={true} setSearchText={setSearchText} />
       <div
         style={{
           display: "flex",
@@ -55,6 +57,7 @@ const KitchenStaffPage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              marginBottom:"20px",
             }}
           >
             <div className="kitchen-page-titleContainer dark:bg-gray-900 dark:text-white">
