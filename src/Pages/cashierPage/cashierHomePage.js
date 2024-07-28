@@ -33,7 +33,7 @@ const CashierHomePage = () => {
   return (
 
     <div className="dark:bg-secondary dark:text-white">
-      <Navbar/>
+      <Navbar setSearchText={setSearchText}/>
 
 
 

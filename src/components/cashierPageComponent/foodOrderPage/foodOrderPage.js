@@ -46,7 +46,9 @@ const FoodOrder = ({
         toast.success("Order added successfully!");
         
         setTimeout(() => {
-          window.location.reload();
+          setSelectedFoods([]);
+          setCash(0);
+          setTotalPrice(0)
         }, 5000);
       } catch (error) {
         toast.error("Failed to add order. Please try again.");
