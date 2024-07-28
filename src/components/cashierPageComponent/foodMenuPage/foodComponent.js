@@ -1,12 +1,30 @@
 import React, { useEffect, useState } from "react";
 import "./foodComponent.css"; // Import CSS file for styling
 import MobileFoodOrderCounter from "./mobileFoodOrderCounter";
-import imageUrl from "../../../assets/images/food1.jpg";
+import imageUrl1 from "../../../assets/images/food1.jpg";
+import imageUrl2 from "../../../assets/images/food2.jpg";
+import imageUrl3 from "../../../assets/images/food3.jpg";
+import imageUrl4 from "../../../assets/images/food4.png";
+import imageUrl5 from "../../../assets/images/food5.jpeg";
+import imageUrl6 from "../../../assets/images/food6.png";
+import imageUrl7 from "../../../assets/images/food7.jpg";
+import imageUrl8 from "../../../assets/images/food8.jpg";
+import imageUrl9 from "../../../assets/images/food9.jpg";
+import imageUrl10 from "../../../assets/images/food10.jpg";
+import imageUrl11 from "../../../assets/images/food11.png";
+import imageUrl12 from "../../../assets/images/food12.jpg";
+import imageUrl13 from "../../../assets/images/food13.jpg";
+import imageUrl14 from "../../../assets/images/food14.jpg";
+import imageUrl15 from "../../../assets/images/food15.jpg";
+import imageUrl16 from "../../../assets/images/food16.jpg";
+import imageUrl17 from "../../../assets/images/food17.jpg";
+import imageUrl18 from "../../../assets/images/food18.jpg";
 
 
 const FoodComponent = ({ menuItem, setSelectedFoods }) => {
   const [isClickable, setIsClickable] = useState(false);
   const [newFoodMobile, setNewFoodMobile] = useState(null);
+  const imageUrls =[imageUrl1,imageUrl2,imageUrl3,imageUrl4,imageUrl5,imageUrl6,imageUrl5,imageUrl6,imageUrl7,imageUrl8,imageUrl9,imageUrl10,imageUrl11,imageUrl12,imageUrl13,imageUrl14,imageUrl15,imageUrl16,imageUrl17,imageUrl18];
   useEffect(() => {
     const handleResize = () => {
       setIsClickable(window.innerWidth > 420);
@@ -15,6 +33,10 @@ const FoodComponent = ({ menuItem, setSelectedFoods }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const getRandomUrl = () => {
+    const randomIndex = Math.floor(Math.random() * imageUrls.length);
+    return imageUrls[randomIndex];
+  };
   const handleClick = () => {
     const newFood = {
       name: menuItem.MenuName,
@@ -69,7 +91,7 @@ const FoodComponent = ({ menuItem, setSelectedFoods }) => {
     >
       <div className="image-container">
         <div className="image-frame">
-          <img src={imageUrl} alt="Image" className="image" />
+          <img src={getRandomUrl()} alt="Image" className="image" />
         </div>
       </div>
       <div className="food-text-container">
