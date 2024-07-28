@@ -16,7 +16,7 @@ export const login = async (loginData) => {
     }
     if (response.ok) {
       localStorage.setItem("user", loginData.username);
-      getUser()
+      // getUser()
       document.location = "/";
     }
 
