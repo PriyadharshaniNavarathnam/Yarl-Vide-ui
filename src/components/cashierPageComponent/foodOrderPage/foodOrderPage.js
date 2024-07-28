@@ -74,7 +74,7 @@ const FoodOrder = ({
   const TabButton = ({ color, text, onPressed, width }) => {
     return (
       <button
-        className="custom-button-cashier dark:bg-amber-500 dark:text-white w-2/3"
+        className="custom-button-cashier dark:bg-amber-500 dark:text-white w-2/3 bg-orange-700 font-bold"
         // style={{ backgroundColor: color, width: width }}
         onClick={onPressed}
       >
