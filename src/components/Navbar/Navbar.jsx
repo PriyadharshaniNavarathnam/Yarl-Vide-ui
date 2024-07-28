@@ -7,7 +7,7 @@ import { logout } from "../../services/loginPageApi";
 
 function Navbar({ setSearchText }) {
   return (
-    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200">
+    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200" style={{paddingLeft:"10px",paddingRight:"10px"}}>
       <div className="bg-amber-200 py-2 flex justify-between dark:bg-gray-900 dark:text-white">
         {/* Logo */}
         <div>
@@ -63,7 +63,7 @@ function Navbar({ setSearchText }) {
 
     try {
       await logout();
-      console.log("Successfully logout", localStorage.getItem("user"));
+      //console.log("Successfully logout", localStorage.getItem("user"));
     } catch (err) {
       console.log("logout failed: ", err);
     }

@@ -53,17 +53,17 @@ const CashierHomePage = () => {
         />
       ) : (
         <div className="homePage">
-          <div className="header-cashier">
+          
             <div className="header-mobile">
-              <h1 className="title-cashier">Yarl Vibe</h1>
+            <CashierSearchBar setSearchText={setSearchText} />
               <FontAwesomeIcon
                 icon={faCartShopping}
                 className="cart-icon"
                 onClick={handleCartIconClick}
               />
             </div>
-            <CashierSearchBar setSearchText={setSearchText} />
-          </div>
+            
+          
           <div className="menu-row-cashier">
             <FoodMenu
               seMenu={seMenu}
