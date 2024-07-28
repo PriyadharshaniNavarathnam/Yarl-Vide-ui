@@ -40,8 +40,8 @@ const FoodOrderDetails = ({
   };
 
   return (
-    <div className="order-food-details" key={uKey}>
-      <div className="sub-order-food-details">
+    <div className="order-food-details dark:bg-gray-700 dark:text-white" key={uKey}>
+      <div className="sub-order-food-details dark:bg-gray-700 dark:text-white">
         <CounterComponent
           foodName={foodName}
           menuItemID={menuItemID}
@@ -57,7 +57,7 @@ const FoodOrderDetails = ({
         <div style={{ display: "flex" }}>
           <div className="order-food-price">Rs.{price}</div>
           <span
-            className={`arrow ${collapsed ? "collapsed" : ""}`}
+            className={`arrow ${collapsed ? "collapsed" : ""} `}
             onClick={toggleCollapse}
           >
             &#x25BC;
@@ -65,14 +65,14 @@ const FoodOrderDetails = ({
         </div>
       </div>
       {!collapsed && (
-        <div className="collapsible-content">
+        <div className="collapsible-content dark:bg-gray-700 dark:text-white">
           <input
             onChange={(e) => {
               updateCutermizeText(e.target.value);
             }}
             value={custermizeText}
             type="text"
-            className="food-custermizing-text-field"
+            className="food-custermizing-text-field dark:bg-gray-700 dark:text-white dark:placeholder:text-white dark:hover:border-slate-950"
             placeholder="Custermize food..."
           />
         </div>

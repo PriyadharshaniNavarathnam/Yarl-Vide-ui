@@ -1,3 +1,5 @@
+const { amber } = require("@mui/material/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
@@ -6,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#fea928",
+        primary: "#fef7dd",
         secondary: "#1E2A31",
       },
       container: {

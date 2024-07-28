@@ -63,7 +63,7 @@ const FoodComponent = ({ menuItem, setSelectedFoods }) => {
   };
   return (
     <div
-      className="curved-box"
+      className="curved-box dark:bg-gray-700 dark:text-white"
       onClick={isClickable ? handleClick : null}
       style={{ cursor: "pointer" }}
     >

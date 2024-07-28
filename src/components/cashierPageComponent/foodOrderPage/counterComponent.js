@@ -67,10 +67,10 @@ const CounterComponent = ({
   
 
   return (
-    <div className="counter-container" key={uKey}>
+    <div className="counter-container dark:bg-gray-700 dark:text-white" key={uKey}>
       <button
         id="decrementButton"
-        className="counter-button"
+        className="counter-button dark:bg-gray-700 dark:text-white w-6"
         onClick={decrementCounter}
       >
         -
@@ -78,7 +78,7 @@ const CounterComponent = ({
       <p className="counter">{quantity}</p>
       <button
         id="incrementButton"
-        className="counter-button"
+        className="counter-button dark:bg-gray-700 dark:text-white w-6"
         onClick={incrementCounter}
       >
         +

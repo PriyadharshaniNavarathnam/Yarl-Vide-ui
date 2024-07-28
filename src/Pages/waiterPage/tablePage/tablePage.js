@@ -48,9 +48,9 @@ const updateTableStatusFloor1 = ( TableCode, newStatus) => {
 
   return (
     
-      <div>
+      <div className='dark:bg-secondary dark:text-white'>
         <Navbar/>
-         <div  className="tableHeader" >
+         <div  className="tableHeader dark:bg-secondary dark:text-white" >
             <h1  className='title' onClick={logout}>Tables</h1>
             {/* Pass a function to onClick */}
             <FontAwesomeIcon icon={faBell} className="notification-icon" onClick={handleBellIconClick} />

@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
   }
   .collapsible-section {
     border: 1px solid #ccc;

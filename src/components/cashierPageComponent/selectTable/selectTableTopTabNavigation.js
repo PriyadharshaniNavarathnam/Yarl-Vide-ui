@@ -10,26 +10,24 @@ const SelectTableTopTabNavigation = ({ onSelectTab }) => {
   };
 
   return (
-    <div>
-      <div className="select-table-top-tab-navigation">
+    <div className="dark:bg-gray-700 dark:text-white">
+      <div className="select-table-top-tab-navigation dark:bg-gray-700 dark:text-white py-3">
       <div
-        className="select-table-tab"
-        style={{
-          color: activeTab == "Main Floor" ? "white" : "black",
-          backgroundColor:
-            activeTab == "Main Floor" ? "rgb(193, 64, 0)" : "white",
-        }}
+        className={`select-table-tab dark:border-amber-600 ${
+          activeTab === "Main Floor"
+            ? "text-white bg-[rgb(193,64,0)] dark:text-amber-700 dark:bg-orange-300"
+            : "text-black bg-white dark:text-white dark:bg-gray-900"
+        }`}
         onClick={() => handleTabClick("Main Floor")}
       >
         Main Floor
       </div>
       <div
-        className="select-table-tab"
-        style={{
-          color: activeTab == "Upper Floor" ? "white" : "black",
-          backgroundColor:
-            activeTab == "Upper Floor" ? "rgb(193, 64, 0)" : "white",
-        }}
+        className={`select-table-tab dark:border-amber-600 ${
+          activeTab === "Upper Floor"
+            ? "text-white bg-[rgb(193,64,0)] dark:text-amber-700 dark:bg-orange-300"
+            : "text-black bg-white dark:text-white dark:bg-gray-900"
+        }`}
         onClick={() => handleTabClick("Upper Floor")}
       >
         Upper Floor
