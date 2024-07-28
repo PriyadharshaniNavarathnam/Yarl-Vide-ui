@@ -1,7 +1,7 @@
 
 .kitchen-details-container {
-  border-radius: 10;
-  background-color: #dddcdc;
+  border-radius: 10px;
+  background-color: whitesmoke;
   padding:0.5%;
   width: 100%;
   align-self: center;

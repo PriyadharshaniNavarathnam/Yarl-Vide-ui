@@ -32,11 +32,11 @@ const KitchenOrderDetailsComponent = ({
   return (
     <div
       className="kitchen-details-container dark:bg-gray-700 dark:text-white dark:font-bold"
-      onClick={handleClick}
+      
     >
       <div className="kitchen-details-row">
-        <div className="kitchen-details-label dark:font-bold">{id}</div>
-        <div className="kitchen-details-label dark:font-bold">
+        <div className="kitchen-details-label dark:font-bold" onClick={handleClick}>{id}</div>
+        <div className="kitchen-details-label dark:font-bold" onClick={handleClick}>
           {dateAndTime}
         </div>
         <StatusButton foodStatus={foodStatus} orderID={id} />

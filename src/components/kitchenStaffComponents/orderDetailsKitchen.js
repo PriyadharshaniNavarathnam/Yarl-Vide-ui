@@ -12,9 +12,10 @@ const OrderDetailsKitchen = ({
   orderId,
   dateAndTime,
   setIsOrderSelected,
-  ordersDetails
+  ordersDetails,
+  foodStatus
 }) => {
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState(foodStatus);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogMessage, setDialogMessage] = useState('');
   const [dialogAction, setDialogAction] = useState(() => {});
@@ -38,9 +39,13 @@ const OrderDetailsKitchen = ({
     setDialogMessage('Are you sure you want to send Notification to waiter?');
     setDialogAction(() => () => {
       toast.success('Notification sent to waiter.');
+      setStatus('completed');
       UpdateOrderStatus({ orderID: orderId, foodStatus: 'completed' });
     });
     setDialogOpen(true);
+    setTimeout(() =>{
+      window.location.reload();
+    },8000)
   };
 
   const handleConfirm = () => {
