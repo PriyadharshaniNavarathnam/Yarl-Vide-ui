@@ -15,6 +15,16 @@
        padding-top: 2%;
        font-size: 150%;
       }
+      .header-mobile{
+        width: 90%;
+        padding-right:5%;
+        padding-left:5%;
+        justify-content: space-between;
+        flex-direction:  row;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+      }
    
   }
   
@@ -35,6 +45,16 @@
        padding-top: 2%;
        font-size: 150%;
       }
+      .header-mobile{
+        width: 90%;
+        padding-right:5%;
+        padding-left:5%;
+        justify-content: space-between;
+        flex-direction:  row;
+        display: none;
+        align-items: center;
+        background-color: transparent;
+      }
    
   }
   
@@ -45,14 +65,5 @@
     flex-direction: row;
     width: 100%;
   }
-  .header-mobile{
-    width: 90%;
-    padding-right:5%;
-    padding-left:5%;
-    justify-content: space-between;
-    flex-direction:  row;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-  }
+  
   

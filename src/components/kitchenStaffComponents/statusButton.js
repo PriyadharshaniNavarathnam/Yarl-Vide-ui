@@ -12,13 +12,15 @@ const StatusButton = ({ foodStatus, orderID }) => {
   const [dialogMessage, setDialogMessage] = useState('');
   const [dialogAction, setDialogAction] = useState(() => {});
 
-  const handleClick = () => {
+  const handleClickStatus = () => {
     if (status === 'pending') {
       setDialogMessage('Are you sure you want to accept the order?');
       setDialogAction(() => () => {
         setStatus('processing');
         UpdateOrderStatus({ orderID: orderID, foodStatus: 'processing' });
-        
+        setTimeout(() =>{
+          window.location.reload();
+        },3000)
       });
       setDialogOpen(true);
     }  else if (status === 'completed' ) {
@@ -26,9 +28,7 @@ const StatusButton = ({ foodStatus, orderID }) => {
     } else if (status === 'delivered' ) {
       toast.error("Order has already been delivered.");
     } 
-    setTimeout(() => {
-      window.location.reload();
-    }, 3000);
+    
   };
 
   const handleConfirm = () => {
@@ -42,7 +42,7 @@ const StatusButton = ({ foodStatus, orderID }) => {
 
   return (
     <div>
-      <button className={`status-button ${status}`} onClick={handleClick}>
+      <button className={`status-button ${status}`} onClick={handleClickStatus}>
         {status === 'pending' && 'Pending'}
         {status === 'processing' && 'Processing'}
         {status === 'completed' && 'Completed'}

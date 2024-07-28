@@ -11,6 +11,7 @@
   font-style: italic;
   max-width: 200px;
 }
+
 @media screen and (min-width: 422px)  {
   .kitchen-search-container {
     position: relative;
@@ -19,7 +20,6 @@
     margin:auto;
   }
 }
-
 
 @media screen and (max-width:421px) {
   .kitchen-search-container {

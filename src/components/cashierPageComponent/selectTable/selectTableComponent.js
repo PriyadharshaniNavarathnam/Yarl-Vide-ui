@@ -4,9 +4,9 @@ const TableTwoChair = ({ number }) => {
   return (
     <div>
       <div className="select-table-table-twoChairs">
-        <div className="select-table-chair-right"> </div>
-        <div className="select-table-table">{number}</div>
-        <div className="select-table-chair-right"> </div>
+        <div className="select-table-chair-right dark:bg-gray-400"> </div>
+        <div className="select-table-table dark:bg-gray-600">{number}</div>
+        <div className="select-table-chair-right dark:bg-gray-400"> </div>
       </div>
     </div>
   );
@@ -14,9 +14,9 @@ const TableTwoChair = ({ number }) => {
 const ThreeChair = () => {
   return (
     <div className="select-table-threeChairs">
-      <div className="select-table-chair-top"></div>
-      <div className="select-table-chair-top"></div>
-      <div className="select-table-chair-top"></div>
+      <div className="select-table-chair-top dark:bg-gray-400"></div>
+      <div className="select-table-chair-top dark:bg-gray-400"></div>
+      <div className="select-table-chair-top dark:bg-gray-400"></div>
     </div>
   );
 };
@@ -37,7 +37,7 @@ const SelectTableComponent = ({
 
   return (
     <div
-      className="select-table-table-container"
+      className="select-table-table-container dark:bg-gray-700 dark:text-white font-semibold"
       onClick={handleClick}
       style={{ cursor: "pointer" }}
     >

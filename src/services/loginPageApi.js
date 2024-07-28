@@ -16,6 +16,7 @@ export const login = async (loginData) => {
     }
     if (response.ok) {
       localStorage.setItem("user", loginData.username);
+      getUser()
       document.location = "/";
     }
 
@@ -29,18 +30,40 @@ export const login = async (loginData) => {
 // Logout function
 export const logout = async () => {
   try {
-    const response = await fetch(API_URL+"Login/logout");
+    const response = await fetch(API_URL + "Login/logout");
     if (!response.ok) {
       throw new Error(`Failed to logout: ${response.statusText}`);
-    }else{
-      console.log("Loged out")
+    } else {
+      console.log("Logged out");
+      // alert("Logout " + localStorage.getItem("user"));
+      document.location = ""; 
     }
     localStorage.removeItem("user");
-    
-    
   } catch (error) {
     console.error("Error logging out:", error);
     alert(`Error logging out: ${error.message}`);
+    throw error;
+  }
+};
+export const getUser = async () => {
+  try {
+    const response = await fetch(API_URL + "Login/getUser", {
+      method: "GET",
+    });
+    console.log(response)
+
+    if (!response.ok) {
+      throw new Error("Failed to login");
+    }
+    if (response.ok) {
+      localStorage.setItem("user", );
+      document.location = "/";
+    }
+
+    const userData = await response.json();
+    return userData;
+  } catch (error) {
+    console.error("Error logging in:", error);
     throw error;
   }
 };

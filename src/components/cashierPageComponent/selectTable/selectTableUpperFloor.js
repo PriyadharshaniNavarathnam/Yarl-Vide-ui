@@ -8,8 +8,8 @@ const SelectTableUpperFloor = ({
   setIsShowTable
 }) => {
   return (
-    <div className="select-table-upperFloor">
-      <div className="select-table-up-background-container">
+    <div className="select-table-upperFloor dark:bg-secondary dark:text-white">
+      <div className="select-table-up-background-container dark:bg-secondary dark:text-white">
         <div className="select-table-up-grid-container">
           {data.map((table) => (
             <SelectTableComponent
@@ -23,7 +23,7 @@ const SelectTableUpperFloor = ({
           ))}
         </div>
       </div>
-      <div class="select-table-up-status-row">
+      <div class="select-table-up-status-row dark:bg-secondary dark:text-white">
         <div class="select-table-up-circle green"></div>
         <div class="select-table-up-status-text">Vacant</div>
         <div class="select-table-up-circle red"></div>
