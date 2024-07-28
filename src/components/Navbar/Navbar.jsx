@@ -8,7 +8,7 @@ import { logout } from "../../services/loginPageApi";
 function Navbar({ setSearchText }) {
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200" >
-      <div className="bg-amber-200 py-2 flex justify-between dark:bg-gray-900 dark:text-white" style={{paddingLeft:"10px",paddingRight:"10px"}}>
+      <div className="bg-white py-2 flex justify-between dark:bg-gray-900 dark:text-white" style={{paddingLeft:"10px",paddingRight:"10px"}}>
         {/* Logo */}
         <div>
           <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
