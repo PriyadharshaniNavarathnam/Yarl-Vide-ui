@@ -59,8 +59,8 @@ const FoodOrder = ({
   const TabButton = ({ color, text, onPressed, width }) => {
     return (
       <button
-        className="custom-button-cashier"
-        style={{ backgroundColor: color, width: width }}
+        className="custom-button-cashier dark:bg-amber-500 dark:text-white w-2/3"
+        // style={{ backgroundColor: color, width: width }}
         onClick={onPressed}
       >
         {text}
@@ -78,6 +78,7 @@ const FoodOrder = ({
       <div className="food-order-details">
         {foods.length === 0 ? (
           <div
+            className="dark:text-gray-50"
             style={{
               display: "flex",
               justifyContent: "center",

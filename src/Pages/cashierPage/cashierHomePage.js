@@ -31,7 +31,7 @@ const CashierHomePage = () => {
   };
   const [searchText, setSearchText] = useState("");
   return (
-    <div>
+    <div className="dark:bg-secondary dark:text-white">
       <Navbar/>
       {isShowTable ? (
         <SelectTablePage

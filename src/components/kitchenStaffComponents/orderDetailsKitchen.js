@@ -29,8 +29,8 @@ const OrderDetailsKitchen = ({
     };
 
     return (
-      <div className="kitchen-order-food-details">
-        <div className="kitchen-sub-order-food-details">
+      <div className="kitchen-order-food-details dark:bg-gray-700 dark:text-white">
+        <div className="kitchen-sub-order-food-details dark:bg-gray-700 dark:text-white">
           <div className="kitchen-order-food-name">{foodName}</div>
           <div style={{ display: "flex" }}>
             <div style={{ paddingRight: "30%", fontWeight: "bold" }}>
@@ -68,7 +68,7 @@ const OrderDetailsKitchen = ({
       onClick={handleCloseIconClick}
       style={{ marginRight: '10px' }} // Adjust the value as needed
     />
-    <div className="kitchen-page-header">
+    <div className="kitchen-page-header dark:bg-secondary">
         <img src={logo} alt="Yarl VBB Logo" className="kitchen-page-logo" />
         <div className="kitchen-page-heading">
           <h1 className="kitchen-page-title">Order Details</h1>
@@ -76,9 +76,9 @@ const OrderDetailsKitchen = ({
       </div>
      
       <div className="orderId">Order Id: {orderId}</div>
-      <div className="container_date_label">
-        <div className="name">Yarl Vibe</div>
-        <div className="date">{dateAndTime}</div>
+      <div className="container_date_label dark:text-white">
+        <div className="name dark:text-white">Yarl Vibe</div>
+        <div className="date dark:text-white">{dateAndTime}</div>
       </div>
       <div  style={{ width: "100%", justifyContent: "center", overflowY: "auto", height: "80%" }}>
         {Object.keys(ordersDetails).map((foodKey) => (

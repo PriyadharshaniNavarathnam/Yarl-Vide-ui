@@ -4,9 +4,9 @@ import {updateDatabaseTableStatus} from '../../../services/tablePageApi.js'
 const TableTwoChair=({number})=>{
     return <div >
          <div className='table-twoChairs'>
-        <div className='chair-right'> </div>
-        <div className='table'>{number}</div>
-        <div className='chair-right'> </div>
+        <div className='chair-right dark:bg-gray-400'> </div>
+        <div className='table dark:bg-gray-600'>{number}</div>
+        <div className='chair-right dark:bg-gray-400'> </div>
         </div>
     </div>
        
@@ -14,9 +14,9 @@ const TableTwoChair=({number})=>{
 }
 const ThreeChair =()=>{
     return <div className='threeChairs'>
-    <div className='chair-top'></div>
-    <div className='chair-top'></div>
-    <div className='chair-top'></div>
+    <div className='chair-top dark:bg-gray-400'></div>
+    <div className='chair-top dark:bg-gray-400'></div>
+    <div className='chair-top dark:bg-gray-400'></div>
 </div>
 }
 const TableComponent = ({ tableNumber, tableStatus, updateTableStatus }) => {
@@ -34,7 +34,7 @@ const TableComponent = ({ tableNumber, tableStatus, updateTableStatus }) => {
    
   }
   return (
-    <div className="table-container" onClick={HandleClick}>
+    <div className="table-container dark:bg-gray-700 dark:text-white font-semibold" onClick={HandleClick}>
         <div></div>
         <div className='table-setup' style={{scale:"1.3"}}>
            <ThreeChair/>

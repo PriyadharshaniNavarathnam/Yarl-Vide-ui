@@ -29,7 +29,7 @@ const KitchenStaffPage = () => {
 
 
   return (
-    <div>
+    <div className="dark:bg-secondary dark:text-white">
       <Navbar/>
       {(isMobileScreen&&isOrderSelected)?<div style={{justifyContent:"center",width:"100%",height:"100%"}}>
         <OrderDetailsKitchen
@@ -57,7 +57,7 @@ const KitchenStaffPage = () => {
               alignItems: "center",
             }}
           >
-            <div className="kitchen-page-titleContainer">
+            <div className="kitchen-page-titleContainer dark:bg-gray-900 dark:text-white">
               <div className="kitchen-page-row">
                 <div className="kitchen-page-label">OrderID</div>
                 <div className="kitchen-page-label">Date and Time</div>
@@ -66,7 +66,7 @@ const KitchenStaffPage = () => {
             </div>
           </div>
           <div className="kitchen-order-details">
-            <div className="detailsContainer">
+            <div className="detailsContainer dark:bg-secondary dark:text-white">
               {orderData.map((dataItem) => (
                 <div key={dataItem.OrderID} className="kitchen-order-row">
                   {dataItem.OrderID.toString().includes(searchText) ? (

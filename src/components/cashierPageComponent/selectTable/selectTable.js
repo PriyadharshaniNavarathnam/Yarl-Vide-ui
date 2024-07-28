@@ -43,7 +43,7 @@ const SelectTablePage = ({ setSelectedTable, setIsShowTable }) => {
 
   return (
     <div>
-      <div className="select-table-tableHeader">
+      <div className="select-table-tableHeader dark:bg-secondary dark:text-white">
         <h1 className="select-table-title">Tables</h1>
         <FontAwesomeIcon
         icon={faClose}
