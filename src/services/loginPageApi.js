@@ -35,7 +35,7 @@ export const logout = async () => {
       throw new Error(`Failed to logout: ${response.statusText}`);
     } else {
       console.log("Logged out");
-      alert("Logout " + localStorage.getItem("user"));
+      // alert("Logout " + localStorage.getItem("user"));
       document.location = ""; 
     }
     localStorage.removeItem("user");
