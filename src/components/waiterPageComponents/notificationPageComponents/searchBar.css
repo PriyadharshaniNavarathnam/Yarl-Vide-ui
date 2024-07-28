@@ -23,7 +23,7 @@
   
   @media (min-width: 421px) {
     .waiter-search-container {
-        display: flex;
+        display: none;
         align-items: center;
         border-radius: 20px;
         padding: 1% 2%;

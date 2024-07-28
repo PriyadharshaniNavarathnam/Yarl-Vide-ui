@@ -5,24 +5,28 @@ import ConfirmationDialog from '../../DialogBox';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ToggleSwitch = ({label, foodStatus, orderID}) => {
+const ToggleSwitch = ({ label, foodStatus, orderID }) => {
   const [isChecked, setIsChecked] = useState(foodStatus === "delivered");
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogMessage, setDialogMessage] = useState('');
-  const [dialogAction, setDialogAction] = useState(() => {});
+  const [dialogAction, setDialogAction] = useState(() => () => {});
 
-  const handleToggle = () => {
+  const handleToggle = async () => {
     if (!isChecked) {
       setDialogMessage('Are you sure you want to change status to delivered?');
-      setDialogAction(() => {
-        return () => {
-          updateNotificationFoodStatus({orderID: orderID, foodStatus: 'delivered'});
-          setIsChecked(true);
-        };
+      setDialogAction(() => async () => {
+        try {
+          await updateNotificationFoodStatus({ orderID, foodStatus: 'delivered' });
+          setIsChecked(true); // Update local state
+         
+        } catch (error) {
+          console.error("Error updating food status:", error);
+          toast.error("Failed to update order status.");
+        }
       });
       setDialogOpen(true);
     } else {
-      toast.success("Order already delivered!!");
+      toast.error("Order already delivered!");
     }
   };
 
@@ -38,7 +42,7 @@ const ToggleSwitch = ({label, foodStatus, orderID}) => {
   return (
     <div>
       {foodStatus === "processing" ? (
-        <div style={{color: "red", fontSize: "100%"}}>Processing</div>
+        <div style={{ color: "red", fontSize: "100%" }}>Processing</div>
       ) : (
         <div className="toggle-switch-container">
           <div className="toggle-switch">

@@ -1,8 +1,8 @@
 
 .details-container {
-    border-radius: 10;
-    background-color: #F5F5F5;
-    padding:0.5%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    padding:0;
     width: 100%;
     align-self: center;
     text-align:center;
@@ -14,7 +14,9 @@
     margin-right: 1%;
   }
   .details-label {
-    font-weight: normal;
-    margin-right: 5; 
+    font-weight: bolder;
+    margin-right: 5%; 
+    margin-left: 3%;
+    margin-top: 3%;
     
   }
