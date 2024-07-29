@@ -41,6 +41,9 @@ const OrderDetailsKitchen = ({
       toast.success('Notification sent to waiter.');
       setStatus('completed');
       UpdateOrderStatus({ orderID: orderId, foodStatus: 'completed' });
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
     });
     setDialogOpen(true);
     setTimeout(() =>{

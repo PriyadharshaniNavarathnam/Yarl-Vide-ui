@@ -6,11 +6,6 @@ import { getNotificationData } from "../../../services/notificationPageApi";
 import "./notificationPage.css";
 import Navbar from "../../../components/Navbar/Navbar";
 const NotificationPage = () => {
-
-
-
-
-
   const [searchText, setSearchText] = useState("");
   const [notificationData, setNotificationData] = useState([]);
   const fetchNotificationData = async () => {
