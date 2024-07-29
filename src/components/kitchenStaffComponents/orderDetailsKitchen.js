@@ -38,12 +38,13 @@ const OrderDetailsKitchen = ({
   const handleButtonClick = () => {
     setDialogMessage('Are you sure you want to send Notification to waiter?');
     setDialogAction(() => () => {
-      toast.success('Notification sent to waiter.');
       setStatus('completed');
+      toast.success('Notification sent to waiter.');
+      
       UpdateOrderStatus({ orderID: orderId, foodStatus: 'completed' });
-      setTimeout(() => {
-        window.location.reload();
-      }, 5000);
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 5000);
     });
     setDialogOpen(true);
     setTimeout(() =>{

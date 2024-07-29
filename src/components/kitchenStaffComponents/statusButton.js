@@ -18,9 +18,9 @@ const StatusButton = ({ foodStatus, orderID }) => {
       setDialogAction(() => () => {
         setStatus('processing');
         UpdateOrderStatus({ orderID: orderID, foodStatus: 'processing' });
-        setTimeout(() =>{
-          window.location.reload();
-        },3000)
+        // setTimeout(() =>{
+        //   window.location.reload();
+        // },3000)
       });
       setDialogOpen(true);
     }  else if (status === 'completed' ) {

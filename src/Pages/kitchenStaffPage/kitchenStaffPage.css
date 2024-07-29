@@ -12,8 +12,7 @@
     justify-content: center;
     padding-top: 0;
   }
-}
-
+}                                                                                                                                                                                                                                                                                              
 .kitchen-page-titleContainer {
   margin-top: 20px;
   border-radius: 10px;
@@ -58,5 +57,5 @@
   cursor: pointer;
   text-align: center;
   border-radius: 50px;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(244, 238, 238);
 }
