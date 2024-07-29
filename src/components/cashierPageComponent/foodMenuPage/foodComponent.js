@@ -19,13 +19,17 @@ import imageUrl15 from "../../../assets/images/food15.jpg";
 import imageUrl16 from "../../../assets/images/food16.jpg";
 import imageUrl17 from "../../../assets/images/food17.jpg";
 import imageUrl18 from "../../../assets/images/food18.jpg";
+import { toast, ToastContainer } from 'react-toastify';
+import { useAccount } from "@azure/msal-react";
 
 
 const FoodComponent = ({ menuItem, setSelectedFoods }) => {
   const [isClickable, setIsClickable] = useState(false);
   const [newFoodMobile, setNewFoodMobile] = useState(null);
+  const [imageUrl, setImageUrl]= useState(imageUrl1);
   const imageUrls =[imageUrl1,imageUrl2,imageUrl3,imageUrl4,imageUrl5,imageUrl6,imageUrl5,imageUrl6,imageUrl7,imageUrl8,imageUrl9,imageUrl10,imageUrl11,imageUrl12,imageUrl13,imageUrl14,imageUrl15,imageUrl16,imageUrl17,imageUrl18];
   useEffect(() => {
+    setImageUrl(getRandomUrl());
     const handleResize = () => {
       setIsClickable(window.innerWidth > 420);
     };
@@ -65,15 +69,15 @@ const FoodComponent = ({ menuItem, setSelectedFoods }) => {
           (food) => food.name === newFoodMobile.name
         );
         if (!foodNameExists) {
-          alert("Food added succesfuly!")
+          toast.success("Food added succesfuly!")
           return [...selectedFoods, newFoodMobile];
         } else {
-          alert("Food already added!")
+          toast.success("Food already added!")
           return selectedFoods;
         }
       });
     } else {
-      alert("Please select qauntity of the food!");
+      toast.error("Please select qauntity of the food!");
     }
   };
   const AddButton = () => {
@@ -91,7 +95,7 @@ const FoodComponent = ({ menuItem, setSelectedFoods }) => {
     >
       <div className="image-container">
         <div className="image-frame">
-          <img src={getRandomUrl()} alt="Image" className="image" />
+          <img src={imageUrl} alt="Image" className="image" />
         </div>
       </div>
       <div className="food-text-container">
