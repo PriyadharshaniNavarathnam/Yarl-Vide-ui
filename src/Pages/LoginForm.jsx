@@ -17,6 +17,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { amber } from "@mui/material/colors";
 import { login } from "../services/loginPageApi";
+import { toast, ToastContainer } from "react-toastify";
 
 function LoginForm() {
   const lightTheme = createTheme({
@@ -228,6 +229,7 @@ function LoginForm() {
               >
                 Login
               </Button>
+              <ToastContainer />
             </div>
           </Box>
         </Grid>
@@ -238,7 +240,7 @@ function LoginForm() {
   async function handleLogin(e) {
     e.preventDefault();
     // login Data
-     const loginData = {
+    const loginData = {
       username,
       password,
       remember,
@@ -247,9 +249,9 @@ function LoginForm() {
 
     try {
       const userData = await login(loginData);
-      console.log("Successfully login", userData);
+      toast.success("Successfully login", userData);
     } catch (err) {
-      console.log("login failed: ", err);
+      toast.error("Invalid Username or Passward ", err);
     }
   }
 }
